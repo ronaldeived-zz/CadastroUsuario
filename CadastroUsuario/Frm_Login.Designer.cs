@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.Lbl_CadastroCliente = new System.Windows.Forms.Label();
-            this.Lbl_Login = new System.Windows.Forms.Label();
+            this.Lbl_SubTitulo = new System.Windows.Forms.Label();
             this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Btn_Entrar = new System.Windows.Forms.Button();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
+            this.Btn_Sair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Lbl_CadastroCliente
@@ -47,15 +48,15 @@
             this.Lbl_CadastroCliente.TabIndex = 0;
             this.Lbl_CadastroCliente.Text = "Cadastro de Clientes";
             // 
-            // Lbl_Login
+            // Lbl_SubTitulo
             // 
-            this.Lbl_Login.AutoSize = true;
-            this.Lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.Lbl_Login.Location = new System.Drawing.Point(160, 75);
-            this.Lbl_Login.Name = "Lbl_Login";
-            this.Lbl_Login.Size = new System.Drawing.Size(54, 22);
-            this.Lbl_Login.TabIndex = 1;
-            this.Lbl_Login.Text = "Login";
+            this.Lbl_SubTitulo.AutoSize = true;
+            this.Lbl_SubTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Lbl_SubTitulo.Location = new System.Drawing.Point(160, 75);
+            this.Lbl_SubTitulo.Name = "Lbl_SubTitulo";
+            this.Lbl_SubTitulo.Size = new System.Drawing.Size(54, 22);
+            this.Lbl_SubTitulo.TabIndex = 1;
+            this.Lbl_SubTitulo.Text = "Login";
             // 
             // Lbl_Usuario
             // 
@@ -87,13 +88,16 @@
             // 
             // Btn_Entrar
             // 
-            this.Btn_Entrar.Location = new System.Drawing.Point(78, 341);
+            this.Btn_Entrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Btn_Entrar.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Btn_Entrar.Location = new System.Drawing.Point(78, 354);
             this.Btn_Entrar.Name = "Btn_Entrar";
             this.Btn_Entrar.Size = new System.Drawing.Size(75, 23);
             this.Btn_Entrar.TabIndex = 6;
             this.Btn_Entrar.TabStop = false;
             this.Btn_Entrar.Text = "Entrar";
-            this.Btn_Entrar.UseVisualStyleBackColor = true;
+            this.Btn_Entrar.UseVisualStyleBackColor = false;
+            this.Btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
             // 
             // Txt_Senha
             // 
@@ -104,21 +108,37 @@
             this.Txt_Senha.TabIndex = 7;
             this.Txt_Senha.UseSystemPasswordChar = true;
             // 
+            // Btn_Sair
+            // 
+            this.Btn_Sair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Btn_Sair.Location = new System.Drawing.Point(200, 354);
+            this.Btn_Sair.Name = "Btn_Sair";
+            this.Btn_Sair.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Sair.TabIndex = 9;
+            this.Btn_Sair.TabStop = false;
+            this.Btn_Sair.Text = "Sair";
+            this.Btn_Sair.UseVisualStyleBackColor = false;
+            this.Btn_Sair.Click += new System.EventHandler(this.Btn_Sair_Click);
+            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 477);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(358, 455);
+            this.Controls.Add(this.Btn_Sair);
             this.Controls.Add(this.Txt_Senha);
             this.Controls.Add(this.Btn_Entrar);
             this.Controls.Add(this.Lbl_Senha);
             this.Controls.Add(this.Txt_Usuario);
             this.Controls.Add(this.Lbl_Usuario);
-            this.Controls.Add(this.Lbl_Login);
+            this.Controls.Add(this.Lbl_SubTitulo);
             this.Controls.Add(this.Lbl_CadastroCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,12 +147,13 @@
         #endregion
 
         private System.Windows.Forms.Label Lbl_CadastroCliente;
-        private System.Windows.Forms.Label Lbl_Login;
+        private System.Windows.Forms.Label Lbl_SubTitulo;
         private System.Windows.Forms.Label Lbl_Usuario;
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Label Lbl_Senha;
         private System.Windows.Forms.Button Btn_Entrar;
         private System.Windows.Forms.TextBox Txt_Senha;
+        private System.Windows.Forms.Button Btn_Sair;
     }
 }
 
