@@ -31,6 +31,7 @@ namespace CadastroUsuario
 
         private void Btn_Entrar_Click(object sender, EventArgs e)
         {
+            int id_Usuario;
 
             SqlConnection con = new SqlConnection(@"Data Source=BRPC003828;Initial Catalog=CADASTRO_USUARIO;Persist Security Info=True;User ID=sa;Password=Gftbr!2020");
             string query = @"Select * from USUARIO U
