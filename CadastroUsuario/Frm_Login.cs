@@ -13,49 +13,50 @@ namespace CadastroUsuario
 {
     public partial class Frm_Login : Form
     {
+        /*Alguns comandos de sql*/
+        SqlConnection connection = new SqlConnection(@"Data Source=BRPC003828;Initial Catalog=CADASTRO_USUARIO;Persist Security Info=True;User ID=sa;Password=Gftbr!2020");
+        SqlCommand sqlCommand;
+        SqlDataAdapter dataAdapter;
+
         public Frm_Login()
         {
             InitializeComponent();
         }
 
-        private void Frm_Login_Load(object sender, EventArgs e)
+        /*Método para logar em um processo*/
+        public void Btn_Entrar_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Btn_Sair_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void Btn_Entrar_Click(object sender, EventArgs e)
-        {
-            int id_Usuario;
-
-            SqlConnection con = new SqlConnection(@"Data Source=BRPC003828;Initial Catalog=CADASTRO_USUARIO;Persist Security Info=True;User ID=sa;Password=Gftbr!2020");
-            string query = @"Select * from USUARIO U
+            sqlCommand = new SqlCommand(@"Select U.NOME from USUARIO U
                 INNER JOIN USUARIO_PERFIL UP ON UP.ID_USUARIO = U.ID_USUARIO 
-                WHERE LOGIN= '"+ Txt_Usuario.Text +"' AND SENHA = '"+ Txt_Senha.Text +"' AND ID_PERFIL = 3";
-            SqlDataAdapter db = new SqlDataAdapter(query, con);
-            DataTable dt = new DataTable();
-            db.Fill(dt);
+            WHERE LOGIN= '" + Txt_Usuario.Text + "' AND SENHA = '" + Txt_Senha.Text + "' AND ID_PERFIL = 3", connection);
+
+
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable data = new DataTable();
+            dataAdapter.Fill(data);
             try
             {
-                if (dt.Rows.Count == 1)
+                if (data.Rows.Count == 1)
                 {
+                    DataRow myRow = data.Rows[0];
+                    string nome_Usuario = myRow["NOME"].ToString();
                     this.Hide();
-                    new Frm_Processo().Show();
+                    new Frm_Processo(nome_Usuario).Show();
                 }
                 else
                 {
                     MessageBox.Show("Login ou Senha incorreto!");
                 }
             }
-            catch (SqlException erro)
+            catch (SqlException exc)
             {
-                MessageBox.Show(erro.Message);
+                MessageBox.Show(exc.Message);
             }
+        }
+        private void Btn_Sair_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

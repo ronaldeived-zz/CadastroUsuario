@@ -45,7 +45,7 @@
             this.Lbl_CadastroCliente.Location = new System.Drawing.Point(97, 42);
             this.Lbl_CadastroCliente.Name = "Lbl_CadastroCliente";
             this.Lbl_CadastroCliente.Size = new System.Drawing.Size(178, 22);
-            this.Lbl_CadastroCliente.TabIndex = 0;
+            this.Lbl_CadastroCliente.TabIndex = 7;
             this.Lbl_CadastroCliente.Text = "Cadastro de Clientes";
             // 
             // Lbl_SubTitulo
@@ -55,7 +55,7 @@
             this.Lbl_SubTitulo.Location = new System.Drawing.Point(160, 75);
             this.Lbl_SubTitulo.Name = "Lbl_SubTitulo";
             this.Lbl_SubTitulo.Size = new System.Drawing.Size(54, 22);
-            this.Lbl_SubTitulo.TabIndex = 1;
+            this.Lbl_SubTitulo.TabIndex = 6;
             this.Lbl_SubTitulo.Text = "Login";
             // 
             // Lbl_Usuario
@@ -65,7 +65,7 @@
             this.Lbl_Usuario.Location = new System.Drawing.Point(74, 144);
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(59, 22);
-            this.Lbl_Usuario.TabIndex = 2;
+            this.Lbl_Usuario.TabIndex = 5;
             this.Lbl_Usuario.Text = "Login:";
             // 
             // Txt_Usuario
@@ -74,7 +74,7 @@
             this.Txt_Usuario.Location = new System.Drawing.Point(78, 187);
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.Size = new System.Drawing.Size(197, 27);
-            this.Txt_Usuario.TabIndex = 3;
+            this.Txt_Usuario.TabIndex = 0;
             // 
             // Lbl_Senha
             // 
@@ -93,8 +93,7 @@
             this.Btn_Entrar.Location = new System.Drawing.Point(78, 354);
             this.Btn_Entrar.Name = "Btn_Entrar";
             this.Btn_Entrar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Entrar.TabIndex = 6;
-            this.Btn_Entrar.TabStop = false;
+            this.Btn_Entrar.TabIndex = 2;
             this.Btn_Entrar.Text = "Entrar";
             this.Btn_Entrar.UseVisualStyleBackColor = false;
             this.Btn_Entrar.Click += new System.EventHandler(this.Btn_Entrar_Click);
@@ -105,7 +104,7 @@
             this.Txt_Senha.Location = new System.Drawing.Point(78, 271);
             this.Txt_Senha.Name = "Txt_Senha";
             this.Txt_Senha.Size = new System.Drawing.Size(197, 27);
-            this.Txt_Senha.TabIndex = 7;
+            this.Txt_Senha.TabIndex = 1;
             this.Txt_Senha.UseSystemPasswordChar = true;
             // 
             // Btn_Sair
@@ -114,8 +113,7 @@
             this.Btn_Sair.Location = new System.Drawing.Point(200, 354);
             this.Btn_Sair.Name = "Btn_Sair";
             this.Btn_Sair.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Sair.TabIndex = 9;
-            this.Btn_Sair.TabStop = false;
+            this.Btn_Sair.TabIndex = 3;
             this.Btn_Sair.Text = "Sair";
             this.Btn_Sair.UseVisualStyleBackColor = false;
             this.Btn_Sair.Click += new System.EventHandler(this.Btn_Sair_Click);
@@ -138,7 +136,6 @@
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
