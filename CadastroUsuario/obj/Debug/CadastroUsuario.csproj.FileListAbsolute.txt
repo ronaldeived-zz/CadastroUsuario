@@ -8,4 +8,4 @@ C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuar
 C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuario.csproj.CoreCompileInputs.cache
 C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuario.exe
 C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuario.pdb
-C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuario.Frm_Processo.resources
+C:\Users\rdmv\Documents\WindowsForms\UBS\CadastroUsuario\obj\Debug\CadastroUsuario.Txt_Sexo.resources

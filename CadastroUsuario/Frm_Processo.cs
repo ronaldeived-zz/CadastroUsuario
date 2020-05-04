@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CadastroUsuario
 {
-    public partial class Frm_Processo : Form
+    public partial class Txt_Sexo : Form
     {
         /*Atributos relacionados ao index da linha na tabela e o ID_Processo */
         int indexRow;
@@ -24,7 +24,7 @@ namespace CadastroUsuario
         public string nome_Usuario { get; set; }
 
 
-        public Frm_Processo(string _nome_Usuario)
+        public Txt_Sexo(string _nome_Usuario)
         {
             InitializeComponent();
             autoTableUpdate();
@@ -53,9 +53,9 @@ namespace CadastroUsuario
             id_Processo = Convert.ToInt32(row.Cells[4].Value);
             Txt_Cidade.Text = row.Cells[6].Value.ToString();
             Txt_Nome.Text = row.Cells[7].Value.ToString();
-            txt_Cpf.Text = row.Cells[8].Value.ToString();
+            Txt_Cpf.Text = row.Cells[8].Value.ToString();
             txt_Rg.Text = row.Cells[9].Value.ToString();
-            txt_Nascimento.Text = row.Cells[10].Value.ToString();
+            Mtb_Nascimento.Text = row.Cells[10].Value.ToString();
             Txt_Email.Text = row.Cells[11].Value.ToString();
             txt_Cep.Text = row.Cells[12].Value.ToString();
             Txt_Rua.Text = row.Cells[13].Value.ToString();
@@ -63,13 +63,13 @@ namespace CadastroUsuario
             Txt_Complemento.Text = row.Cells[15].Value.ToString();
             Txt_Bairro.Text = row.Cells[16].Value.ToString();
             txt_Celular.Text = row.Cells[17].Value.ToString();
-            Txt_Sexo.Text = row.Cells[18].Value.ToString();
+            tx_Sexo.Text = row.Cells[18].Value.ToString();
             Txt_Excluir.Text = row.Cells[4].Value.ToString();
         }
         /*Metodo para inserir um método*/
         private void Btn_Salvar_Click(object sender, EventArgs e)
         {
-            if (Txt_Cidade.Text != "" && Txt_Nome.Text != "" && txt_Cpf.Text != "" && txt_Rg.Text != "")
+            if (Txt_Cidade.Text != "" && Txt_Nome.Text != "" && Txt_Cpf.Text != "" && txt_Rg.Text != "")
             {
                 try
                 {
@@ -82,9 +82,9 @@ namespace CadastroUsuario
                     sqlCommand.Parameters.AddWithValue("@STATUS", 5);
                     sqlCommand.Parameters.AddWithValue("@CIDADE", Cbx_Cidade.SelectedValue);
                     sqlCommand.Parameters.AddWithValue("@NOME", Txt_Nome.Text.ToUpper());
-                    sqlCommand.Parameters.AddWithValue("@CPF", txt_Cpf.Text);
+                    sqlCommand.Parameters.AddWithValue("@CPF", Txt_Cpf.Text);
                     sqlCommand.Parameters.AddWithValue("@RG", txt_Rg.Text);
-                    sqlCommand.Parameters.AddWithValue("@NASCIMENTO", txt_Nascimento.Text);
+                    sqlCommand.Parameters.AddWithValue("@NASCIMENTO", Mtb_Nascimento.Text);
                     sqlCommand.Parameters.AddWithValue("@EMAIL", Txt_Email.Text.ToLower());
                     sqlCommand.Parameters.AddWithValue("@CEP", txt_Cep.Text);
                     sqlCommand.Parameters.AddWithValue("@RUA", Txt_Rua.Text.ToUpper());
@@ -92,7 +92,7 @@ namespace CadastroUsuario
                     sqlCommand.Parameters.AddWithValue("@COMPLEMENTO", Txt_Complemento.Text.ToUpper());
                     sqlCommand.Parameters.AddWithValue("@BAIRRO", Txt_Bairro.Text.ToUpper());
                     sqlCommand.Parameters.AddWithValue("@CELULAR", txt_Celular.Text);
-                    sqlCommand.Parameters.AddWithValue("@SEXO", Txt_Sexo.Text.ToUpper());
+                    sqlCommand.Parameters.AddWithValue("@SEXO", tx_Sexo.Text.ToUpper());
                     int affectedRows = sqlCommand.ExecuteNonQuery();
                     
                     if (affectedRows > 0)
@@ -124,7 +124,7 @@ namespace CadastroUsuario
         /*Metodo para atualizar algum processo existente */
         private void Btn_Atualizar_Click(object sender, EventArgs e)
         {
-            if (Txt_Nome.Text != "" && txt_Cpf.Text != "")
+            if (Txt_Nome.Text != "" && Txt_Cpf.Text != "")
             {
                 try
                 {
@@ -137,9 +137,9 @@ namespace CadastroUsuario
                     sqlCommand.Parameters.AddWithValue("@Status", 5);
                     sqlCommand.Parameters.AddWithValue("@Cidade", Txt_Cidade.Text);
                     sqlCommand.Parameters.AddWithValue("@Nome", Txt_Nome.Text.ToUpper());
-                    sqlCommand.Parameters.AddWithValue("@Cpf", txt_Cpf.Text);
+                    sqlCommand.Parameters.AddWithValue("@Cpf", Txt_Cpf.Text);                 
                     sqlCommand.Parameters.AddWithValue("@Rg", txt_Rg.Text);
-                    sqlCommand.Parameters.AddWithValue("@Nascimento", txt_Nascimento.Text.ToString());
+                    sqlCommand.Parameters.AddWithValue("@Nascimento", Mtb_Nascimento.Text.ToString());
                     sqlCommand.Parameters.AddWithValue("@Email", Txt_Email.Text.ToLower());
                     sqlCommand.Parameters.AddWithValue("@Cep", txt_Cep.Text);
                     sqlCommand.Parameters.AddWithValue("@Rua", Txt_Rua.Text.ToUpper());
@@ -147,7 +147,7 @@ namespace CadastroUsuario
                     sqlCommand.Parameters.AddWithValue("@Complemento", Txt_Complemento.Text.ToUpper());
                     sqlCommand.Parameters.AddWithValue("@Bairro", Txt_Bairro.Text.ToUpper());
                     sqlCommand.Parameters.AddWithValue("@Celular", txt_Celular.Text);
-                    sqlCommand.Parameters.AddWithValue("@Sexo", Txt_Sexo.Text.ToUpper());
+                    sqlCommand.Parameters.AddWithValue("@Sexo", tx_Sexo.Text.ToUpper());
                     connection.Open();
 
                     int affectedRows = sqlCommand.ExecuteNonQuery();
@@ -214,9 +214,9 @@ namespace CadastroUsuario
         {
             Txt_Cidade.Text = "";
             Txt_Nome.Text = "";
-            txt_Cpf.Text = "";
+            Txt_Cpf.Text = "";
             txt_Rg.Text = "";
-            txt_Nascimento.Text = "";
+            Mtb_Nascimento.Text = "";
             Txt_Email.Text = "";
             txt_Cep.Text = "";
             Txt_Rua.Text = "";
@@ -224,7 +224,7 @@ namespace CadastroUsuario
             Txt_Complemento.Text = "";
             Txt_Bairro.Text = "";
             txt_Celular.Text = "";
-            Txt_Sexo.Text = "";
+            tx_Sexo.Text = "";
             
             autoTableUpdate();
         }
@@ -341,6 +341,11 @@ namespace CadastroUsuario
             {
                 Txt_Cidade.Text = Cbx_Cidade.SelectedValue.ToString();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

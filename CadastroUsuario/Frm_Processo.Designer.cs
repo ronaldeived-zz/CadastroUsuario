@@ -1,6 +1,6 @@
 ﻿namespace CadastroUsuario
 {
-    partial class Frm_Processo
+    partial class Txt_Sexo
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@
             this.Txt_Email = new System.Windows.Forms.TextBox();
             this.Txt_Nome = new System.Windows.Forms.TextBox();
             this.Txt_Cidade = new System.Windows.Forms.TextBox();
-            this.Txt_Sexo = new System.Windows.Forms.TextBox();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.Txt_Complemento = new System.Windows.Forms.TextBox();
             this.Lbl_Complemento = new System.Windows.Forms.Label();
@@ -66,11 +65,12 @@
             this.Cbx_Pais = new System.Windows.Forms.ComboBox();
             this.Lbl_Estado = new System.Windows.Forms.Label();
             this.Cbx_Estado = new System.Windows.Forms.ComboBox();
-            this.txt_Nascimento = new System.Windows.Forms.TextBox();
             this.txt_Celular = new System.Windows.Forms.TextBox();
             this.txt_Cep = new System.Windows.Forms.TextBox();
             this.txt_Rg = new System.Windows.Forms.TextBox();
-            this.txt_Cpf = new System.Windows.Forms.TextBox();
+            this.Mtb_Nascimento = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Cpf = new System.Windows.Forms.TextBox();
+            this.tx_Sexo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Processos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,13 +133,6 @@
             this.Txt_Cidade.ReadOnly = true;
             this.Txt_Cidade.Size = new System.Drawing.Size(100, 20);
             this.Txt_Cidade.TabIndex = 3;
-            // 
-            // Txt_Sexo
-            // 
-            this.Txt_Sexo.Location = new System.Drawing.Point(655, 246);
-            this.Txt_Sexo.Name = "Txt_Sexo";
-            this.Txt_Sexo.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Sexo.TabIndex = 15;
             // 
             // Txt_Bairro
             // 
@@ -291,7 +284,7 @@
             this.Btn_Sair.Location = new System.Drawing.Point(194, 12);
             this.Btn_Sair.Name = "Btn_Sair";
             this.Btn_Sair.Size = new System.Drawing.Size(71, 22);
-            this.Btn_Sair.TabIndex = 20;
+            this.Btn_Sair.TabIndex = 21;
             this.Btn_Sair.Text = "Sair";
             this.Btn_Sair.UseVisualStyleBackColor = false;
             this.Btn_Sair.Click += new System.EventHandler(this.Btn_Sair_Click);
@@ -322,7 +315,7 @@
             this.Btn_Excluir.Location = new System.Drawing.Point(892, 306);
             this.Btn_Excluir.Name = "Btn_Excluir";
             this.Btn_Excluir.Size = new System.Drawing.Size(100, 30);
-            this.Btn_Excluir.TabIndex = 19;
+            this.Btn_Excluir.TabIndex = 20;
             this.Btn_Excluir.Text = "Excluir";
             this.Btn_Excluir.UseVisualStyleBackColor = false;
             this.Btn_Excluir.Click += new System.EventHandler(this.Btn_Excluir_Click);
@@ -342,7 +335,7 @@
             this.Txt_Excluir.Location = new System.Drawing.Point(854, 312);
             this.Txt_Excluir.Name = "Txt_Excluir";
             this.Txt_Excluir.Size = new System.Drawing.Size(32, 20);
-            this.Txt_Excluir.TabIndex = 20;
+            this.Txt_Excluir.TabIndex = 19;
             // 
             // Btn_Novo
             // 
@@ -434,51 +427,61 @@
             this.Cbx_Estado.TabIndex = 1;
             this.Cbx_Estado.SelectedIndexChanged += new System.EventHandler(this.Cbx_Estado_SelectedIndexChanged);
             // 
-            // txt_Nascimento
-            // 
-            this.txt_Nascimento.Location = new System.Drawing.Point(147, 347);
-            this.txt_Nascimento.Name = "txt_Nascimento";
-            this.txt_Nascimento.Size = new System.Drawing.Size(100, 20);
-            this.txt_Nascimento.TabIndex = 64;
-            // 
             // txt_Celular
             // 
             this.txt_Celular.Location = new System.Drawing.Point(655, 199);
             this.txt_Celular.Name = "txt_Celular";
             this.txt_Celular.Size = new System.Drawing.Size(100, 20);
-            this.txt_Celular.TabIndex = 65;
+            this.txt_Celular.TabIndex = 14;
             // 
             // txt_Cep
             // 
             this.txt_Cep.Location = new System.Drawing.Point(415, 194);
             this.txt_Cep.Name = "txt_Cep";
             this.txt_Cep.Size = new System.Drawing.Size(100, 20);
-            this.txt_Cep.TabIndex = 66;
+            this.txt_Cep.TabIndex = 9;
             // 
             // txt_Rg
             // 
             this.txt_Rg.Location = new System.Drawing.Point(147, 299);
             this.txt_Rg.Name = "txt_Rg";
             this.txt_Rg.Size = new System.Drawing.Size(100, 20);
-            this.txt_Rg.TabIndex = 67;
+            this.txt_Rg.TabIndex = 6;
             // 
-            // txt_Cpf
+            // Mtb_Nascimento
             // 
-            this.txt_Cpf.Location = new System.Drawing.Point(147, 250);
-            this.txt_Cpf.Name = "txt_Cpf";
-            this.txt_Cpf.Size = new System.Drawing.Size(100, 20);
-            this.txt_Cpf.TabIndex = 68;
+            this.Mtb_Nascimento.Location = new System.Drawing.Point(147, 348);
+            this.Mtb_Nascimento.Mask = "00/00/0000";
+            this.Mtb_Nascimento.Name = "Mtb_Nascimento";
+            this.Mtb_Nascimento.Size = new System.Drawing.Size(100, 20);
+            this.Mtb_Nascimento.TabIndex = 7;
+            this.Mtb_Nascimento.ValidatingType = typeof(System.DateTime);
             // 
-            // Frm_Processo
+            // Txt_Cpf
+            // 
+            this.Txt_Cpf.Location = new System.Drawing.Point(147, 246);
+            this.Txt_Cpf.Name = "Txt_Cpf";
+            this.Txt_Cpf.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cpf.TabIndex = 5;
+            // 
+            // tx_Sexo
+            // 
+            this.tx_Sexo.Location = new System.Drawing.Point(655, 250);
+            this.tx_Sexo.Name = "tx_Sexo";
+            this.tx_Sexo.Size = new System.Drawing.Size(100, 20);
+            this.tx_Sexo.TabIndex = 15;
+            // 
+            // Txt_Sexo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 667);
-            this.Controls.Add(this.txt_Cpf);
+            this.Controls.Add(this.tx_Sexo);
+            this.Controls.Add(this.Txt_Cpf);
+            this.Controls.Add(this.Mtb_Nascimento);
             this.Controls.Add(this.txt_Rg);
             this.Controls.Add(this.txt_Cep);
             this.Controls.Add(this.txt_Celular);
-            this.Controls.Add(this.txt_Nascimento);
             this.Controls.Add(this.Lbl_Estado);
             this.Controls.Add(this.Cbx_Estado);
             this.Controls.Add(this.Lbl_Pais);
@@ -509,7 +512,6 @@
             this.Controls.Add(this.Lbl_Complemento);
             this.Controls.Add(this.Txt_Complemento);
             this.Controls.Add(this.Txt_Bairro);
-            this.Controls.Add(this.Txt_Sexo);
             this.Controls.Add(this.Txt_Cidade);
             this.Controls.Add(this.Txt_Nome);
             this.Controls.Add(this.Txt_Email);
@@ -517,7 +519,7 @@
             this.Controls.Add(this.Txt_Numero);
             this.Controls.Add(this.Grd_Processos);
             this.Controls.Add(this.Lbl_BemVindo);
-            this.Name = "Frm_Processo";
+            this.Name = "Txt_Sexo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Processo_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Processos)).EndInit();
@@ -535,7 +537,6 @@
         private System.Windows.Forms.TextBox Txt_Email;
         private System.Windows.Forms.TextBox Txt_Nome;
         private System.Windows.Forms.TextBox Txt_Cidade;
-        private System.Windows.Forms.TextBox Txt_Sexo;
         private System.Windows.Forms.TextBox Txt_Bairro;
         private System.Windows.Forms.TextBox Txt_Complemento;
         private System.Windows.Forms.Label Lbl_Complemento;
@@ -566,10 +567,11 @@
         private System.Windows.Forms.ComboBox Cbx_Pais;
         private System.Windows.Forms.Label Lbl_Estado;
         private System.Windows.Forms.ComboBox Cbx_Estado;
-        private System.Windows.Forms.TextBox txt_Nascimento;
         private System.Windows.Forms.TextBox txt_Celular;
         private System.Windows.Forms.TextBox txt_Cep;
         private System.Windows.Forms.TextBox txt_Rg;
-        private System.Windows.Forms.TextBox txt_Cpf;
+        private System.Windows.Forms.MaskedTextBox Mtb_Nascimento;
+        private System.Windows.Forms.TextBox Txt_Cpf;
+        private System.Windows.Forms.TextBox tx_Sexo;
     }
 }
