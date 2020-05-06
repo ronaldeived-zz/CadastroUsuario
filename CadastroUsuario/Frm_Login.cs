@@ -41,7 +41,7 @@ namespace CadastroUsuario
                     DataRow myRow = data.Rows[0];
                     string nome_Usuario = myRow["NOME"].ToString();
                     this.Hide();
-                    new Txt_Sexo(nome_Usuario).Show();
+                    new ProcessoForm(nome_Usuario).Show();
                 }
                 else
                 {

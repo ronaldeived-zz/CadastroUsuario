@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CadastroUsuario
 {
-    public partial class Txt_Sexo : Form
+    public partial class ProcessoForm : Form
     {
         /*Atributos relacionados ao index da linha na tabela e o ID_Processo */
         int indexRow;
@@ -24,7 +24,7 @@ namespace CadastroUsuario
         public string nome_Usuario { get; set; }
 
 
-        public Txt_Sexo(string _nome_Usuario)
+        public ProcessoForm(string _nome_Usuario)
         {
             InitializeComponent();
             autoTableUpdate();

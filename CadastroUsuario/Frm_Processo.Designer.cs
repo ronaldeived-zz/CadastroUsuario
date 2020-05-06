@@ -1,6 +1,6 @@
 ﻿namespace CadastroUsuario
 {
-    partial class Txt_Sexo
+    partial class ProcessoForm
     {
         /// <summary>
         /// Required designer variable.

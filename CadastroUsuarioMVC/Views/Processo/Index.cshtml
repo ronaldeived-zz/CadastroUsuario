@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CadastroUsuarioMvc.Models.Processo>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Processo</title>
+    <link rel="stylesheet" href="/Content/" />
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Id_Processo)</th>
+                <th>@Html.DisplayNameFor(m => m.Id_Status)</th>
+                <th>@Html.DisplayNameFor(m => m.Id_Cidade)</th>
+                <th>@Html.DisplayNameFor(m => m.Nome)</th>
+                <th>@Html.DisplayNameFor(m => m.Cpf)</th>
+                <th>@Html.DisplayNameFor(m => m.Rg)</th>
+                <th>@Html.DisplayNameFor(m => m.Nascimento)</th>
+                <th>@Html.DisplayNameFor(m => m.Email)</th>
+                <th>@Html.DisplayNameFor(m => m.Cep)</th>
+                <th>@Html.DisplayNameFor(m => m.Rua)</th>
+                <th>@Html.DisplayNameFor(m => m.Numero)</th>
+                <th>@Html.DisplayNameFor(m => m.Complemento)</th>
+                <th>@Html.DisplayNameFor(m => m.Bairro)</th>
+                <th>@Html.DisplayNameFor(m => m.Celular)</th>
+                <th>@Html.DisplayNameFor(m => m.Sexo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var proc in Model)
+            {
+                <tr>
+                    <td>@proc.Id_Processo</td>
+                    <td>@proc.Id_Status</td>
+                    <td>@proc.Id_Cidade</td>
+                    <td>@proc.Nome</td>
+                    <td>@proc.Cpf</td>
+                    <td>@proc.Rg</td>
+                    <td>
+                        @if (proc.Nascimento != null)
+                        {
+                            @proc.Nascimento
+                        }
+                    </td>
+                    <td>@proc.Email</td>
+                    <td>@proc.Cep</td>
+                    <td>@proc.Rua</td>
+                    <td>@proc.Numero</td>
+                    <td>@proc.Complemento</td>
+                    <td>@proc.Bairro</td>
+                    <td>@proc.Celular</td>
+                    <td>@proc.Sexo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
