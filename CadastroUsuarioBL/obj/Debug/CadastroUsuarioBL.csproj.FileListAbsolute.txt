@@ -1,0 +1,11 @@
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioBL.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioBL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioDAL.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioDAL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.csprojAssemblyReference.cache
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.csproj.CoreCompileInputs.cache
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.csproj.CopyComplete
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioModels.pdb

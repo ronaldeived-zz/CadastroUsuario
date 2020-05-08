@@ -1,0 +1,9 @@
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioDAL.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioDAL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.csprojAssemblyReference.cache
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.csproj.CoreCompileInputs.cache
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioModels.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.csproj.CopyComplete
