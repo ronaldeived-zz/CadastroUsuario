@@ -1,35 +1,56 @@
-﻿@model CadastroUsuarioMvc.Models.Usuario
+﻿@model IEnumerable<CadastroUsuarioModels.Processo>
 @{
+    ViewData["Title"] = "Inicio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    ViewBag.Title = "Cadastro de Usuarios";
-}
-<h2>Login</h2>
-
-@using (Html.BeginForm("Login", "Home", FormMethod.Post))
-{
-    if (@ViewBag.Message != null)
-    {
-        <div style="border:1px solid red">
-            @ViewBag.Message
-        </div>
-    }
-    <table>
+<table class="table table-bordered">
+    <thead>
         <tr>
-            <td>@Html.LabelFor(a => a.Login)</td>
-            <td>@Html.TextBoxFor(a => a.Login)</td>
+            <th>@Html.DisplayNameFor(m => m.Id_Processo)</th>
+            <th>@Html.DisplayNameFor(m => m.Id_Status)</th>
+            <th>@Html.DisplayNameFor(m => m.Id_Cidade)</th>
+            <th>@Html.DisplayNameFor(m => m.Nome)</th>
+            <th>@Html.DisplayNameFor(m => m.Cpf)</th>
+            <th>@Html.DisplayNameFor(m => m.Rg)</th>
+            <th>@Html.DisplayNameFor(m => m.Nascimento)</th>
+            <th>@Html.DisplayNameFor(m => m.Email)</th>
+            <th>@Html.DisplayNameFor(m => m.Cep)</th>
+            <th>@Html.DisplayNameFor(m => m.Rua)</th>
+            <th>@Html.DisplayNameFor(m => m.Numero)</th>
+            <th>@Html.DisplayNameFor(m => m.Complemento)</th>
+            <th>@Html.DisplayNameFor(m => m.Bairro)</th>
+            <th>@Html.DisplayNameFor(m => m.Celular)</th>
+            <th>@Html.DisplayNameFor(m => m.Sexo)</th>
+            <th></th>
         </tr>
-        <tr>
-            <td> @Html.LabelFor(a => a.Senha)</td>
-            <td> @Html.PasswordFor(a => a.Senha) </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login" />
-            </td>
-            <td></td>
-        </tr>
-    </table>
-}
+    </thead>
+    <tbody>
+        @foreach (var proc in Model)
+        {
+            <tr>
+                <td>@proc.Id_Processo</td>
+                <td>@proc.Id_Status</td>
+                <td>@proc.Id_Cidade</td>
+                <td>@proc.Nome</td>
+                <td>@proc.Cpf</td>
+                <td>@proc.Rg</td>
+                <td>@proc.Nascimento</td>
+                <td>@proc.Email</td>
+                <td>@proc.Cep</td>
+                <td>@proc.Rua</td>
+                <td>@proc.Numero</td>
+                <td>@proc.Complemento</td>
+                <td>@proc.Bairro</td>
+                <td>@proc.Celular</td>
+                <td>@proc.Sexo</td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = proc.Id_Processo } )
+                </td>
+                <td>
+                    @Html.ActionLink("Excluir", "Excluir", "Processo", new { id = proc.Id_Processo }, new { onclick = "return confirm('Tem certeza que quer excluir?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-default">@Html.ActionLink("Cadastrar", "Index", "Processo")</button>

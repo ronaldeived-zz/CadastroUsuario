@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessoBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +49,10 @@
     <ProjectReference Include="..\CadastroUsuarioDAL\CadastroUsuarioDAL.csproj">
       <Project>{ca2da1aa-2011-49bb-9bc4-2d03ce13e76c}</Project>
       <Name>CadastroUsuarioDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroUsuarioModels\CadastroUsuarioModels.csproj">
+      <Project>{9fa2733c-33a6-4590-879e-d785c968842f}</Project>
+      <Name>CadastroUsuarioModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

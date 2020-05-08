@@ -4,3 +4,6 @@ C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioD
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.csproj.CoreCompileInputs.cache
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\bin\Debug\CadastroUsuarioModels.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioDAL\obj\Debug\CadastroUsuarioDAL.csproj.CopyComplete

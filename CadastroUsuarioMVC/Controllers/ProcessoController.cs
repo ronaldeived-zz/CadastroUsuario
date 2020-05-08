@@ -1,54 +1,73 @@
-﻿using CadastroUsuarioMvc.Models;
+﻿using CadastroUsuarioBL;
+using CadastroUsuarioModels;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Configuration;
 
 namespace CadastroUsuarioMvc.Controllers
 {
     public class ProcessoController : Controller
     {
         // GET: Processo
+        [HttpGet]
         public ActionResult Index()
         {
-            List<Processo> listaProcessos = new List<Processo>();
-
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(CS))
-            {
-                SqlCommand command = new SqlCommand("Select * from PROCESSO", connection);
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    var processo = new Processo();
-
-                    processo.Id_Processo = Convert.ToInt32(reader["ID_PROCESSO"]);
-                    processo.Id_Status = Convert.ToInt32(reader["ID_STATUS"]);
-                    processo.Id_Cidade = Convert.ToInt32(reader["ID_CIDADE"]);
-                    processo.Nome = reader["NOME"].ToString();
-                    processo.Cpf = Convert.ToDecimal(reader["CPF"]);
-                    processo.Rg = Convert.ToInt32(reader["RG"]);
-                    processo.Nascimento = Convert.ToDateTime(reader["NASCIMENTO"]);
-                    processo.Email = reader["EMAIL"].ToString();
-                    processo.Cep = Convert.ToInt32(reader["CEP"]);
-                    processo.Rua = reader["RUA"].ToString();
-                    processo.Numero = reader["NUMERO"].ToString();
-                    processo.Complemento = reader["COMPLEMENTO"].ToString();
-                    processo.Bairro = reader["BAIRRO"].ToString();
-                    processo.Celular = Convert.ToDecimal(reader["CELULAR"]);
-                    processo.Sexo = reader["SEXO"].ToString();
-                    listaProcessos.Add(processo);
-                }
-            }
-            return View(listaProcessos);
+            return View();
         }
+        
+        [HttpPost]
+        public ActionResult Cadastrar(Processo processo)
+        {
+            ProcessoBL bl = new ProcessoBL();
+
+            if (bl.CadastrarProcesso(processo))
+                return RedirectToAction("Index", "Processo");
+            else
+                return Content("Não salvo");
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            ProcessoBL bl = new ProcessoBL();
+            Processo processo = bl.GetProcesso(id);
+
+            return View("Editar", processo);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Processo processo)
+        {
+            ProcessoBL bl = new ProcessoBL();
+
+            if (bl.PostEditarProcesso(processo))
+                return RedirectToAction("Index", "Home");
+            else
+                return Content("Algo deu errado!");
+        }
+
+        [HttpGet]
+        public ActionResult Excluir(int id)
+        {
+            ProcessoBL bl = new ProcessoBL();
+
+            if (bl.ExcluirProcesso(id))
+                return RedirectToAction("Index", "Home");
+            else
+                return Content("Algo deu errado");
+        }
+
+        //[HttpPost]
+        //public ActionResult Excluir(int id)
+        //{
+        //    ProcessoBL bl = new ProcessoBL();
+
+        //    if (bl.ExcluirProcesso(id)) 
+        //        return RedirectToAction("Index", "Home");
+        //    else
+        //        return Content("Algo deu errado");
+        //}
     }
 }

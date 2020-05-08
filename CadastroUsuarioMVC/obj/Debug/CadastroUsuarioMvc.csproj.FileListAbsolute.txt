@@ -74,3 +74,5 @@ C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioBL.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioDAL.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioBL.pdb
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioDAL.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioModels.pdb

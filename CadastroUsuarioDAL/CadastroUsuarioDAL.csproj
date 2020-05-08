@@ -43,8 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionGeral.cs" />
+    <Compile Include="ProcessoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroUsuarioModels\CadastroUsuarioModels.csproj">
+      <Project>{9fa2733c-33a6-4590-879e-d785c968842f}</Project>
+      <Name>CadastroUsuarioModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,6 @@
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.csproj.CoreCompileInputs.cache
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\CadastroUsuarioModels.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.csprojAssemblyReference.cache
