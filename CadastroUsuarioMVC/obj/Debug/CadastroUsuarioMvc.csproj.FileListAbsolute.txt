@@ -76,3 +76,12 @@ C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioBL.pdb
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioDAL.pdb
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioModels.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioModels.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\EntityFramework.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioBL.dll.config
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioModels.dll.config
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\EntityFramework.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioEntity.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioEntity.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioMvc\bin\CadastroUsuarioEntity.dll.config

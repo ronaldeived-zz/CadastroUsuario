@@ -1,73 +1,53 @@
 ﻿using CadastroUsuarioBL;
 using CadastroUsuarioModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CadastroUsuarioMvc.Controllers
 {
     public class ProcessoController : Controller
     {
+        private ProcessoBL bl = new ProcessoBL();
+        private CidadeBL Cbl = new CidadeBL();
         // GET: Processo
         [HttpGet]
         public ActionResult Index()
         {
+            GetPais();
             return View();
         }
         
         [HttpPost]
         public ActionResult Cadastrar(Processo processo)
         {
-            ProcessoBL bl = new ProcessoBL();
-
             if (bl.CadastrarProcesso(processo))
-                return RedirectToAction("Index", "Processo");
+                return RedirectToAction("Index", "Home");
             else
                 return Content("Não salvo");
         }
 
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult Excluir(decimal id)
         {
-            ProcessoBL bl = new ProcessoBL();
-            Processo processo = bl.GetProcesso(id);
-
-            return View("Editar", processo);
-        }
-
-        [HttpPost]
-        public ActionResult Editar(Processo processo)
-        {
-            ProcessoBL bl = new ProcessoBL();
-
-            if (bl.PostEditarProcesso(processo))
-                return RedirectToAction("Index", "Home");
-            else
-                return Content("Algo deu errado!");
-        }
-
-        [HttpGet]
-        public ActionResult Excluir(int id)
-        {
-            ProcessoBL bl = new ProcessoBL();
-
             if (bl.ExcluirProcesso(id))
                 return RedirectToAction("Index", "Home");
             else
                 return Content("Algo deu errado");
         }
 
-        //[HttpPost]
-        //public ActionResult Excluir(int id)
-        //{
-        //    ProcessoBL bl = new ProcessoBL();
+        public void GetPais()
+        {
+            ViewBag.GetPais = Cbl.GetListaPais();
+        }
 
-        //    if (bl.ExcluirProcesso(id)) 
-        //        return RedirectToAction("Index", "Home");
-        //    else
-        //        return Content("Algo deu errado");
-        //}
+        public ActionResult GetListaEstado(int id_Pais)
+        {
+            return Json(new SelectList(Cbl.GetListaEstado(id_Pais), "ID_ESTADO", "NOME"), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetListaCidade(int id_Estado)
+        {
+            return Json(new SelectList(Cbl.GetListaCidade(id_Estado), "ID_CIDADE", "NOME"), JsonRequestBehavior.AllowGet);
+        }
+        
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioDAL", "..\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioModels", "..\CadastroUsuarioModels\CadastroUsuarioModels.csproj", "{9FA2733C-33A6-4590-879E-D785C968842F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEntity", "..\CadastroUsuarioEntity\CadastroUsuarioEntity.csproj", "{C40D214B-1797-491C-8800-0809C746088B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9FA2733C-33A6-4590-879E-D785C968842F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA2733C-33A6-4590-879E-D785C968842F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA2733C-33A6-4590-879E-D785C968842F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C40D214B-1797-491C-8800-0809C746088B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40D214B-1797-491C-8800-0809C746088B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40D214B-1797-491C-8800-0809C746088B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40D214B-1797-491C-8800-0809C746088B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

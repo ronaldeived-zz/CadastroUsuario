@@ -1,36 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using CadastroUsuarioModels;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CadastroUsuarioDAL
 {
-    public class UsuarioDAL
+    public class UsuarioDAL : BaseDAL
     {
         public DataSet GetUsuario()
         {
             ConnectionGeral connection = new ConnectionGeral();
             return connection.ReturnDataSet("SELECT * FROM USUARIO");
         }
-        public bool Login(string usuario, string senha)
+        public Usuario Login(string login, string senha)
         {
-            SqlCommand command;
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            Usuario usuario = new Usuario();
 
-            using (SqlConnection connection = new SqlConnection(CS))
+            using (connection = new SqlConnection(stringDB))
             {
-                command = new SqlCommand(@"Select U.NOME from USUARIO U
-                INNER JOIN USUARIO_PERFIL UP ON UP.ID_USUARIO = U.ID_USUARIO 
-                WHERE LOGIN= '" + usuario + "' AND SENHA = '" + senha + "'", connection);
+                command = new SqlCommand(@"Select * from USUARIO U
+                    INNER JOIN USUARIO_PERFIL UP ON UP.ID_USUARIO = U.ID_USUARIO
+                    INNER JOIN PERFIL P on P.ID_PERFIL = UP.ID_PERFIL 
+                WHERE LOGIN = @login AND SENHA = @senha", connection);
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@senha", senha);
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                DataTable data = new DataTable();
-                dataAdapter.Fill(data);
-                return data.Rows.Count == 1;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    usuario.Id_Usuario = Convert.ToInt32(reader["ID_USUARIO"]);
+                    usuario.Nome = reader["NOME"].ToString();
+                    //usuario.Id_Perfil = Convert.ToInt32(reader["ID_PERFIL"]);
+                    //usuario.Descricao = reader["DESCRICAO"].ToString();
+                    return usuario;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
     }

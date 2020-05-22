@@ -1,42 +1,55 @@
 ﻿using CadastroUsuarioDAL;
+using CadastroUsuarioEntity;
 using CadastroUsuarioModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CadastroUsuarioBL
 {
     public class ProcessoBL
     {
+        private ProcessoContext db = new ProcessoContext();
+        private ProcessoDAL dal = new ProcessoDAL();
+
+        public List<Processo> HomeProcesso(List<decimal> lista_status)
+        {
+            return db.HomeProcesso(lista_status);
+        }
+
         public bool CadastrarProcesso(Processo processo)
         {
-
-            ProcessoDAL dal = new ProcessoDAL();
-
-            return dal.CadastrarProcesso(processo);
+            if (processo != null)
+            {
+                db.CadastrarProcesso(processo);
+                return true;
+            }
+            else
+                return false;
         }
 
         public Processo GetProcesso(int id)
         {
-            ProcessoDAL dal = new ProcessoDAL();
-
-            return dal.GetProcesso(id);
+            return db.GetProcesso(id);
         }
 
         public bool PostEditarProcesso(Processo processo)
         {
-            ProcessoDAL dal = new ProcessoDAL();
-
             return dal.PostEditar(processo);
         }
 
-        public bool ExcluirProcesso(int id)
+        public bool ExcluirProcesso(decimal id)
         {
-            ProcessoDAL dal = new ProcessoDAL();
+            if (id != 0)
+            {
+                db.Excluir(id);
+                return true;
+            }
+            else
+                return false;
+        }
 
-            return dal.Excluir(id);
+        public string GetStatus(int id_status)
+        {
+            return dal.GetStatus(id_status);
         }
     }
 }
