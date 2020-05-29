@@ -8,6 +8,9 @@ namespace CadastroUsuarioModels
 {
     public enum PerfilEnum
     {
-        
+        Administracao = 1,
+        Gerente = 2, 
+        Operacao = 3,
+        Risco = 4
     }
 }

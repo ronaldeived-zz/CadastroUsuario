@@ -57,13 +57,12 @@
     <Compile Include="Perfil.cs" />
     <Compile Include="PerfilEnum.cs" />
     <Compile Include="Processo.cs" />
-    <Compile Include="ProcessoViewEditar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SexoEnum.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Usuario_Perfil.cs" />
     <Compile Include="Usuario_Processo.cs" />
+    <Compile Include="ViewModelProcesso.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

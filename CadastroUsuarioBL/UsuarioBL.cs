@@ -10,18 +10,18 @@ namespace CadastroUsuarioBL
 {
     public class UsuarioBL
     {
-        public bool AcessoParaCadastrar(List<decimal> perfis)
+        public bool AcessoParaCadastrar(List<PerfilEnum> perfis)
         {
             Int32 a = new Int32();
             foreach (var item in perfis)
             {
                 switch (item)
                 {
-                    case 1:
+                    case PerfilEnum.Administracao:
                         //Adm
                         a = 1;
                         break;
-                    case 3:
+                    case PerfilEnum.Operacao:
                         //Operação
                         a = 1;
                         break;
@@ -35,29 +35,29 @@ namespace CadastroUsuarioBL
                 return false;
         }
 
-        public List<decimal> GetStatus(List<decimal> perfis)
+        public List<decimal> GetStatus(List<PerfilEnum> perfis)
         {
             List<decimal> listaStatus = new List<decimal>();
             foreach (var item in perfis)
             {
                 switch (item)
                 {
-                    case 1:
+                    case PerfilEnum.Administracao:
                         //Adm
                         List<decimal> statusAdm = new List<decimal>() { 1, 2, 3, 4, 5, 6 };
                         listaStatus = listaStatus.Concat(statusAdm).ToList();
                         break;
-                    case 2:
+                    case PerfilEnum.Gerente:
                         //Gerencia
                         List<decimal> statusGer = new List<decimal>() { 1, 2, 3 };
                         listaStatus = listaStatus.Concat(statusGer).ToList();
                         break;
-                    case 3:
+                    case PerfilEnum.Operacao:
                         //Operação
                         List<decimal> statusOpe = new List<decimal>() { 2, 3, 4, 5 };
                         listaStatus = listaStatus.Concat(statusOpe).ToList();
                         break;
-                    case 4:
+                    case PerfilEnum.Risco:
                         //Controle de risco
                         List<decimal> statusCtr = new List<decimal>() { 2, 3, 6 };
                         listaStatus = listaStatus.Concat(statusCtr).ToList();

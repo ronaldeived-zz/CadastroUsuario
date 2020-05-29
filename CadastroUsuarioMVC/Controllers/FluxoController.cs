@@ -18,6 +18,7 @@ namespace CadastroUsuarioMvc.Controllers
             bl.EncaminhaGerente(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
+
         public ActionResult AprovarGerente(decimal id)
         {
             var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
@@ -31,12 +32,14 @@ namespace CadastroUsuarioMvc.Controllers
             bl.AprovarControleRisco(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
+
         public ActionResult Reprovar(decimal id)
         {
             var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
             bl.Reprovar(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
+
         public ActionResult Correcao(decimal id)
         {
             var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);

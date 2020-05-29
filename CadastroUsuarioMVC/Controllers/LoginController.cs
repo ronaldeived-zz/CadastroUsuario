@@ -22,6 +22,7 @@ namespace CadastroUsuarioMvc.Controllers
             return View();
         }
 
+        //ESTE MÉTODO FAZ O LOGIN
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
@@ -32,10 +33,19 @@ namespace CadastroUsuarioMvc.Controllers
                     UsuarioBL u = new UsuarioBL();
                     LoginBL bl = new LoginBL();
                     usuario = bl.Login(usuario.Login, usuario.Senha);
+                    //SESSION USADA PARA VER QUAL USUARIO ESTA LOGADO, USADO NOS CONTROLLERS PROCESSO E FLUXO
                     Session["ID_USUARIO"] = Convert.ToInt32(usuario.Id_Usuario);
+
+                    //SESSION PARA MOSTRAR O NOME DA PESSOA LOGADA NO INICIO NA PAGINA HOME
                     Session["NOME"] = usuario.Nome.ToString();
-                    Session["ID_PERFIL"] = u.AcessoParaCadastrar(usuario.Usuario_Perfis.Select(x => x.Id_Perfil).ToList());
-                    Session["STATUS_PERMITIDO"] = u.GetStatus(usuario.Usuario_Perfis.Select(x => x.Id_Perfil).ToList());
+                    
+                    //SESSION UTILIZADA PARA LIBERAR ACESSO AO BOTÃO DE CADASTRAR NA PAGINA HOME
+                    Session["ID_PERFIL"] = u.AcessoParaCadastrar(usuario.Usuario_Perfis.Select(x => (PerfilEnum)x.Id_Perfil).ToList());
+                    
+                    /* SESSION UTILIZADA PARA LIBERAR ACESSO A DETERMINADOS BOTÕES QUE CADA 
+                    PERFIL DE USUARIO TEM LIBERADO ATRAVES DO STATUS PERMITIDO A CADA UM */
+                    Session["STATUS_PERMITIDO"] = u.GetStatus(usuario.Usuario_Perfis.Select(x => (PerfilEnum)x.Id_Perfil).ToList());
+
                     return RedirectToAction("UserDashBoard");
                 }
                 else
@@ -46,6 +56,7 @@ namespace CadastroUsuarioMvc.Controllers
             return RedirectToAction("Index", usuario);
         }
 
+        //ESTE MÉTODO SERVE PARA FAZER A AUTENTICAÇÃO DO LOGIN
         public bool Autenticar(string login, string senha)
         {
             LoginBL bl = new LoginBL();
@@ -58,6 +69,8 @@ namespace CadastroUsuarioMvc.Controllers
             else
                 return false;
         }
+
+        //METODO QUE PEGA A SESSION[ID_USUARIO] E MANDA PARA A PAGINA HOME
         public ActionResult UserDashBoard()
         {
             if (Session["ID_USUARIO"] != null)

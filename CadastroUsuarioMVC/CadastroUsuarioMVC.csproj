@@ -131,10 +131,12 @@
     <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PesquisaController.cs" />
     <Compile Include="Controllers\ProcessoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModelProcesso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +150,7 @@
     <Content Include="Views\EditarProcesso\Editar.cshtml" />
     <Content Include="Views\Historico\Index.cshtml" />
     <Content Include="Views\Processo\Detalhes.cshtml" />
+    <Content Include="Views\Pesquisa\Pesquisa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,12 +160,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CadastroUsuarioBL\CadastroUsuarioBL.csproj">
       <Project>{3a08daeb-719a-495c-8d43-d8b2f206e38c}</Project>
       <Name>CadastroUsuarioBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroUsuarioEntity\CadastroUsuarioEntity.csproj">
+      <Project>{c40d214b-1797-491c-8800-0809c746088b}</Project>
+      <Name>CadastroUsuarioEntity</Name>
     </ProjectReference>
     <ProjectReference Include="..\CadastroUsuarioModels\CadastroUsuarioModels.csproj">
       <Project>{9fa2733c-33a6-4590-879e-d785c968842f}</Project>

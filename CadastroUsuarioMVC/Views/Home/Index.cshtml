@@ -21,6 +21,11 @@
     }
 
     <h3>Seja bem vindo(a), @Session["NOME"].ToString()!</h3>
+    <div>
+        @Html.ActionLink("Pesquisar especifico", "Pesquisa", "Pesquisa", new { }, new { @class = "btn btn-primary" })
+
+    </div>
+    <br>
     <div style="OVERFLOW-Y: scroll; max-width: initial; max-height: 700px">
         <table class="table table-bordered">
             <thead>

@@ -11,11 +11,13 @@ namespace CadastroUsuarioMvc.Controllers
         private CidadeBL Cbl = new CidadeBL();
         private FluxoBL fBL = new FluxoBL();
 
+        /*METODO SERVE PARA PEGAR O PROCESSO ESCOLHIDO E TRAS TODAS AS INFORMAÇÕES PARA OS CAMPOS*/
         [HttpGet]
         public ActionResult Editar(decimal id)
         {
             Processo processo = bl.GetProcesso(id);
 
+            /*ESTA PARTE SERVE PARA TRAZER AS VIEWBAG DE PAIS, ESTADO E CIDADE*/
             GetPais();
             GetEspecificoEstado(processo.Cidade.Estado.Id_Pais);
             GetEspecificoCidade(processo.Cidade.Estado.Id_Estado);
@@ -23,6 +25,7 @@ namespace CadastroUsuarioMvc.Controllers
             return View("Editar", processo);
         }
 
+        //METODO PARA EFETUAR A EDIÇÃO DAQUELE PROCESSO ESPECÍFICO
         [HttpPost]
         public ActionResult Editar(Processo processo)
         {
@@ -39,11 +42,13 @@ namespace CadastroUsuarioMvc.Controllers
                 return Content("Algo deu errado!");
         }
 
+        //METEDO PARA DAR VALOR A VIEWBAG DO ESTADO
         public void GetEspecificoEstado(decimal id_Pais)
         {
             ViewBag.GetEstado = Cbl.GetListaEstado(id_Pais);
         }
 
+        //METEDO PARA DAR VALOR A VIEWBAG DO PAIS
         public void GetEspecificoCidade(decimal id_Estado)
         {
             ViewBag.GetCidade = Cbl.GetListaCidade(id_Estado);
