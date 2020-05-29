@@ -9,6 +9,11 @@
 
 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
 {
+<<<<<<< HEAD
+=======
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+>>>>>>> developerMVC
     if (@ViewBag.Message != null)
     {
         <div style="border:1px solid red">
@@ -19,10 +24,18 @@
         <tr>
             <td>@Html.LabelFor(a => a.Login)</td>
             <td>@Html.TextBoxFor(a => a.Login)</td>
+<<<<<<< HEAD
+=======
+            <td>@Html.ValidationMessageFor(a => a.Login)</td>
+>>>>>>> developerMVC
         </tr>
         <tr>
             <td> @Html.LabelFor(a => a.Senha)</td>
             <td> @Html.PasswordFor(a => a.Senha) </td>
+<<<<<<< HEAD
+=======
+            <td> @Html.ValidationMessageFor(a => a.Senha)</td>
+>>>>>>> developerMVC
         </tr>
         <tr>
             <td></td>

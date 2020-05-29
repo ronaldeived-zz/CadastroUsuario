@@ -9,3 +9,15 @@ C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\obj\Debug\CadastroUsuarioBL.pdb
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioModels.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioModels.pdb
+<<<<<<< HEAD
+=======
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioBL.dll.config
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\EntityFramework.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioModels.dll.config
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\EntityFramework.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioEntity.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioEntity.pdb
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioBL\bin\Debug\CadastroUsuarioEntity.dll.config
+>>>>>>> developerMVC

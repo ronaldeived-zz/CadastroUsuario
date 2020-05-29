@@ -12,6 +12,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+<<<<<<< HEAD
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar">Processos</span>
                     <span class="icon-bar">Novo Processo</span>
@@ -19,6 +20,13 @@
                 </button>
                 @Html.ActionLink("Cadastro de Usuarios", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+=======
+                @Html.ActionLink("Cadastro de Usuarios", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-header">
+                @RenderSection("navbar", false)
+            </div>
+>>>>>>> developerMVC
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                 </ul>
@@ -36,5 +44,9 @@
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+<<<<<<< HEAD
+=======
+    @RenderSection("scripts", false)
+>>>>>>> developerMVC
 </body>
 </html>

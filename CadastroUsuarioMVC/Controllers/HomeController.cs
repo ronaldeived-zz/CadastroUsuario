@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,15 +9,27 @@ using System.Web.Mvc;
 using System.Configuration;
 using CadastroUsuarioBL;
 using CadastroUsuarioModels;
+=======
+﻿using CadastroUsuarioBL;
+using System.Collections.Generic;
+using System.Web.Mvc;
+
+>>>>>>> developerMVC
 
 namespace CadastroUsuarioMvc.Controllers
 {
     public class HomeController : Controller
     {
+<<<<<<< HEAD
+=======
+        private ProcessoBL bl = new ProcessoBL();
+
+>>>>>>> developerMVC
         // GET: Processo
         [HttpGet]
         public ActionResult Index()
         {
+<<<<<<< HEAD
             List<Processo> listaProcessos = new List<Processo>();
 
             string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -56,6 +69,10 @@ namespace CadastroUsuarioMvc.Controllers
         public ActionResult Editar(int id)
         {
             return RedirectToAction("Editar", "Processo", new { id = id });
+=======
+            List<decimal> list = Session["STATUS_PERMITIDO"] as List<decimal>;
+            return View("Index", bl.HomeProcesso(list));
+>>>>>>> developerMVC
         }
     }
 }

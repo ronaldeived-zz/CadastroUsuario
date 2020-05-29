@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<<<<<<< HEAD
+=======
+  <Import Project="..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+>>>>>>> developerMVC
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +16,11 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+<<<<<<< HEAD
+=======
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+>>>>>>> developerMVC
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +40,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="System" />
+=======
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\CadastroUsuario\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\CadastroUsuario\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+>>>>>>> developerMVC
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="CidadeBL.cs" />
+    <Compile Include="FluxoBL.cs" />
+    <Compile Include="HistoricoBL.cs" />
+    <Compile Include="LoginBL.cs" />
+>>>>>>> developerMVC
     <Compile Include="ProcessoBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,10 +77,33 @@
       <Project>{ca2da1aa-2011-49bb-9bc4-2d03ce13e76c}</Project>
       <Name>CadastroUsuarioDAL</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\CadastroUsuarioEntity\CadastroUsuarioEntity.csproj">
+      <Project>{c40d214b-1797-491c-8800-0809c746088b}</Project>
+      <Name>CadastroUsuarioEntity</Name>
+    </ProjectReference>
+>>>>>>> developerMVC
     <ProjectReference Include="..\CadastroUsuarioModels\CadastroUsuarioModels.csproj">
       <Project>{9fa2733c-33a6-4590-879e-d785c968842f}</Project>
       <Name>CadastroUsuarioModels</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+=======
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+>>>>>>> developerMVC
 </Project>

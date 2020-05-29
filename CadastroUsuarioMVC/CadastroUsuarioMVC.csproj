@@ -1,4 +1,8 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<<<<<<< HEAD
+=======
+  <Import Project="..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+>>>>>>> developerMVC
   <Import Project="..\CadastroUsuario\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\CadastroUsuario\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,6 +47,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\CadastroUsuario\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\CadastroUsuario\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+>>>>>>> developerMVC
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -93,7 +106,10 @@
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Home\Home.css" />
+<<<<<<< HEAD
     <None Include="Content\Layout.cshtml" />
+=======
+>>>>>>> developerMVC
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -120,12 +136,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+=======
+    <Compile Include="Controllers\EditarProcessoController.cs" />
+    <Compile Include="Controllers\FluxoController.cs" />
+    <Compile Include="Controllers\HistoricoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PesquisaController.cs" />
+>>>>>>> developerMVC
     <Compile Include="Controllers\ProcessoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\ViewModelProcesso.cs" />
+>>>>>>> developerMVC
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +165,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Processo\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Processo\Editar.cshtml" />
+=======
+    <Content Include="Views\EditarProcesso\Editar.cshtml" />
+    <Content Include="Views\Historico\Index.cshtml" />
+    <Content Include="Views\Processo\Detalhes.cshtml" />
+    <Content Include="Views\Pesquisa\Pesquisa.cshtml" />
+>>>>>>> developerMVC
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,13 +182,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
     <Folder Include="Models\" />
+=======
+>>>>>>> developerMVC
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CadastroUsuarioBL\CadastroUsuarioBL.csproj">
       <Project>{3a08daeb-719a-495c-8d43-d8b2f206e38c}</Project>
       <Name>CadastroUsuarioBL</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\CadastroUsuarioEntity\CadastroUsuarioEntity.csproj">
+      <Project>{c40d214b-1797-491c-8800-0809c746088b}</Project>
+      <Name>CadastroUsuarioEntity</Name>
+    </ProjectReference>
+>>>>>>> developerMVC
     <ProjectReference Include="..\CadastroUsuarioModels\CadastroUsuarioModels.csproj">
       <Project>{9fa2733c-33a6-4590-879e-d785c968842f}</Project>
       <Name>CadastroUsuarioModels</Name>
@@ -188,7 +234,14 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\CadastroUsuario\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\CadastroUsuario\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+<<<<<<< HEAD
   </Target>
+=======
+    <Error Condition="!Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\CadastroUsuario\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+>>>>>>> developerMVC
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

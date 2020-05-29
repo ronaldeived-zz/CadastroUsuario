@@ -4,3 +4,12 @@ C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\CadastroUsuar
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.dll
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.pdb
 C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.csprojAssemblyReference.cache
+<<<<<<< HEAD
+=======
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\CadastroUsuarioModels.dll.config
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\EntityFramework.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\EntityFramework.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rdmv\Documents\CSharp\UBS\CadastroUsuarioModels\obj\Debug\CadastroUsuarioModels.csproj.CopyComplete
+>>>>>>> developerMVC
