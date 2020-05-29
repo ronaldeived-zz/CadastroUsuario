@@ -60,7 +60,7 @@ namespace CadastroUsuarioDAL
                 @RUA, @NUMERO, @COMPLEMENTO, @BAIRRO, @CELULAR, @Sexo)", connection);
                 connection.Open();
 
-                command.Parameters.AddWithValue("@CIDADE",Convert.ToInt32(processo.Id_Cidade));
+                command.Parameters.AddWithValue("@CIDADE",Convert.ToInt32(processo.Cidade.Id_Cidade));
                 command.Parameters.AddWithValue("@STATUS", 4);
                 command.Parameters.AddWithValue("@NOME", processo.Nome.ToString());
                 command.Parameters.AddWithValue("@CPF", Convert.ToDouble(processo.Cpf));
@@ -131,7 +131,7 @@ namespace CadastroUsuarioDAL
                 where ID_PROCESSO = @id", connection);
 
                 command.Parameters.AddWithValue("@id", processo.Id_Processo);
-                command.Parameters.AddWithValue("@Cidade", Convert.ToInt32(processo.Id_Cidade));
+                command.Parameters.AddWithValue("@Cidade", Convert.ToInt32(processo.Cidade.Id_Cidade));
                 command.Parameters.AddWithValue("@Status", 4);
                 command.Parameters.AddWithValue("@Nome", processo.Nome.ToString().ToUpper());
                 command.Parameters.AddWithValue("@Cpf", Convert.ToDouble(processo.Cpf));

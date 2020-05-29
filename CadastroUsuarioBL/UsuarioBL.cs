@@ -10,14 +10,6 @@ namespace CadastroUsuarioBL
 {
     public class UsuarioBL
     {
-
-        public Usuario Login(string login, string senha)
-        {
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
-
-            return usuarioDAL.Login(login, senha);
-        }
-
         public bool AcessoParaCadastrar(List<decimal> perfis)
         {
             Int32 a = new Int32();

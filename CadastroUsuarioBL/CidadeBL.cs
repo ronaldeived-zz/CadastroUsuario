@@ -1,4 +1,5 @@
 ﻿using CadastroUsuarioDAL;
+using CadastroUsuarioEntity;
 using CadastroUsuarioModels;
 using System;
 using System.Collections.Generic;
@@ -10,45 +11,30 @@ namespace CadastroUsuarioBL
 {
     public class CidadeBL
     {
-        private CidadeDAL dal = new CidadeDAL();
+        private CidadeContext db = new CidadeContext();
         public List<Pais> GetListaPais()
         {
-            return dal.GetListaPais();
+            return db.GetListaPais();
         }
 
         public List<Estado> GetListaEstado(decimal id_Pais)
         {
-            return dal.GetListaEstado(id_Pais);
+            return db.GetListaEstado(id_Pais);
         }
 
         public List<Cidade> GetListaCidade(decimal id_Estado)
         {
-            return dal.GetListaCidade(id_Estado);
+            return db.GetListaCidade(id_Estado);
         }
 
-        public int GetIdEstado(decimal id_cidade)
+        public void GetEspecificoEstado(decimal id_Pais)
         {
-            return dal.GetIdEstado(id_cidade);
+            GetListaEstado(id_Pais);
         }
 
-        public int GetIdPais(decimal id_cidade)
+        public void GetEspecificoCidade(decimal id_Estado)
         {
-            return dal.GetIdPais(id_cidade);
-        }
-
-        public string GetNomeCidade(decimal id_cidade)
-        {
-            return dal.GetNomeCidade(id_cidade);
-        }
-
-        public string GetNomeEstado(decimal id_cidade)
-        {
-            return dal.GetNomeEstado(id_cidade);
-        }
-
-        public string GetNomePais(decimal id_cidade)
-        {
-            return dal.GetNomePais(id_cidade);
+            GetListaCidade(id_Estado);
         }
     }
 }

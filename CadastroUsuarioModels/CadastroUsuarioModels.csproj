@@ -55,9 +55,11 @@
     <Compile Include="Estado.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Perfil.cs" />
+    <Compile Include="PerfilEnum.cs" />
     <Compile Include="Processo.cs" />
     <Compile Include="ProcessoViewEditar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SexoEnum.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Usuario_Perfil.cs" />

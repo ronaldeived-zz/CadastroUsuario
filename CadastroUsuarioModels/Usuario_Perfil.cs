@@ -19,10 +19,8 @@ namespace CadastroUsuarioModels
 
         public decimal Id_Perfil { get; set; }
 
-        [NotMapped]
         public virtual Usuario Usuario { get; set; }
 
-        [NotMapped]
         public virtual Perfil Perfil { get; set; }
     }
 }

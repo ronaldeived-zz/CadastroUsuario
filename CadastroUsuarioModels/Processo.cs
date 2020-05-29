@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace CadastroUsuarioModels
 {
     [Table("PROCESSO")]
     public class Processo
-    { 
+    {
+       
         public Processo()
         {
             Usuario_Processos = new HashSet<Usuario_Processo>();
@@ -19,14 +21,17 @@ namespace CadastroUsuarioModels
         [Display(Name = "Processo")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G10}")]
         public decimal Id_Processo { get; set; }
 
         [Display(Name = "Id_Cidade")]
         [Column(TypeName = "numeric")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G10}")]
         public decimal Id_Cidade { get; set; }
         
         [Display(Name = "Id_Status")]
         [Column(TypeName = "numeric")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G10}")]
         public decimal Id_Status { get; set; }
         
         [Display(Name = "Nome")]
@@ -35,10 +40,12 @@ namespace CadastroUsuarioModels
         
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "Informe o CPF", AllowEmptyStrings = false)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G11}")]
         public decimal Cpf { get; set; }
         
         [Display(Name = "RG")]
         [Required()]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G9}")]
         public decimal Rg { get; set; }
         
         [Display(Name = "Nascimento")]
@@ -52,6 +59,7 @@ namespace CadastroUsuarioModels
         
         [Display(Name = "CEP")]
         [Required(ErrorMessage = "Informe o CEP", AllowEmptyStrings = false)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G8}")]
         public decimal Cep { get; set; }
         
         [Display(Name = "Rua")]
@@ -72,12 +80,14 @@ namespace CadastroUsuarioModels
         
         [Display(Name = "Celular")]
         [Required()]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G11}")]
         public decimal Celular { get; set; }
         
         [Display(Name = "Sexo")]
         [Required()]
         public string Sexo { get; set; }
 
+        [ForeignKey("Id_Cidade")]
         public virtual Cidade Cidade { get; set; }
 
         public virtual Status Status { get; set; }

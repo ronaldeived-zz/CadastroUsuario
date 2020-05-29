@@ -10,6 +10,7 @@
         {
         @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         @Html.ActionLink("Novo Processo", "Index", "Processo", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("Historico", "Index", "Historico", new { area = "" }, new { @class = "navbar-brand" })
         @Html.ActionLink("Sair", "LogOut", "Login", new { area = "" }, new { @class = "navbar-brand" })
     }
 
@@ -33,28 +34,32 @@
             </div>
 
             <div class="form-group">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Id_Status, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.Id_Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label class="control-label col-md-2">Pais</label>
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.Cidade.Estado.Pais.Id_Pais, new SelectList(ViewBag.GetPais, "ID_PAIS", "NOME"), "-- Selecione o pais --", new { @class = "form-control", @id = "GetPais" })
+                    @Html.DropDownListFor(model => model.Cidade.Estado.Pais, new SelectList(ViewBag.GetPais, "ID_PAIS", "NOME"), "-- Selecione o pais --", new { @class = "form-control", @id = "GetPais" })
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-2">Estado</label>
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.Cidade.Estado.Id_Estado, new SelectList(ViewBag.GetEstado, "ID_ESTADO", "NOME"), "-- Selecione o estado --", new { @class = "form-control", @id = "GetEstado" })
+                    @Html.DropDownListFor(model => model.Cidade.Estado, new SelectList(ViewBag.GetEstado, "ID_ESTADO", "NOME"), "-- Selecione o estado --", new { @class = "form-control", @id = "GetEstado" })
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-2">Cidade</label>
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.Id_Cidade, new SelectList(ViewBag.GetCidade, "ID_CIDADE", "NOME"), "-- Selecione a cidade --", new { @class = "form-control", @id = "GetCidade" })
+                    @Html.DropDownListFor(model => model.Cidade.Id_Cidade, new SelectList(ViewBag.GetCidade, "ID_CIDADE", "NOME"), "-- Selecione a cidade --", new { @class = "form-control", @id = "GetCidade" })
                 </div>
-            </div>
-
-            <div class="form-group" hidden>
-                @Html.EditorFor(model => model.Id_Status, new { htmlAttributes = new { @class = "form-control", @Value = "4" } })
             </div>
 
             <div class="form-group">
@@ -155,14 +160,12 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Salvar" class="btn btn-default" />
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                    @Html.ActionLink("Voltar", "Index", "Home", new { }, new { @class = "btn btn-default" })
                 </div>
             </div>
         </div>
     }
-    <div>
-        @Html.ActionLink("Back to List", "Index", "Home")
-    </div>
 }
 else
 {

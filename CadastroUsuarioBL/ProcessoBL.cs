@@ -15,25 +15,30 @@ namespace CadastroUsuarioBL
             return db.HomeProcesso(lista_status);
         }
 
-        public bool CadastrarProcesso(Processo processo)
+        public decimal CadastrarProcesso(Processo processo)
         {
             if (processo != null)
             {
-                db.CadastrarProcesso(processo);
-                return true;
+                return db.CadastrarProcesso(processo);
             }
             else
-                return false;
+                return new decimal(null);
         }
 
-        public Processo GetProcesso(int id)
+        public Processo GetProcesso(decimal id)
         {
             return db.GetProcesso(id);
         }
 
-        public bool PostEditarProcesso(Processo processo)
+        public bool PostEditar(Processo processo)
         {
-            return dal.PostEditar(processo);
+            if (processo != null)
+            {
+                db.PostEditar(processo);
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool ExcluirProcesso(decimal id)
@@ -45,11 +50,6 @@ namespace CadastroUsuarioBL
             }
             else
                 return false;
-        }
-
-        public string GetStatus(int id_status)
-        {
-            return dal.GetStatus(id_status);
         }
     }
 }

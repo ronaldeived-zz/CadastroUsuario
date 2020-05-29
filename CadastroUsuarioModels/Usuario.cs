@@ -21,6 +21,7 @@ namespace CadastroUsuarioModels
         [Key]
         public decimal Id_Usuario { get; set; }
 
+        [Display(Name = "Usuario")]
         public string Nome { get; set; }
 
         [Display(Name = "Login")]

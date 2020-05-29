@@ -24,13 +24,10 @@ namespace CadastroUsuarioModels
 
         public DateTime Data_Saida { get; set; }
 
-        [NotMapped]
         public virtual Usuario Usuario { get; set; }
 
-        [NotMapped]
         public virtual Processo Processo { get; set; }
 
-        [NotMapped]
         public virtual Status Status { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CadastroUsuarioDAL;
+using CadastroUsuarioEntity;
 using CadastroUsuarioModels;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,73 @@ namespace CadastroUsuarioBL
 {
     public class FluxoBL
     {
-        public int VerificaNacionalidade(int id)
+        private FluxoContext db = new FluxoContext();
+        private ProcessoContext pDB = new ProcessoContext();
+
+        public void EncaminhaGerente(decimal id_processo, decimal id_usuario)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.VerificaNacionalidade(id);
+            db.EncaminhaGerente(id_processo);
+            var processo = pDB.GetProcesso(id_processo);
+            Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
         }
-        public bool EncaminhaGerente(int id)
+
+        public void EncaminhaCorrecao(decimal id_processo, decimal id_usuario)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.EncaminhaGerente(id);
+            db.EncaminhaCorrecao(id_processo);
+            var processo = pDB.GetProcesso(id_processo);
+            Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
         }
-        public bool EncaminhaControleRisco(int id)
+
+        public void AprovarGerente(decimal id_processo, decimal id_usuario)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.EncaminhaControleRisco(id);
+            if (VerificaSeUsuarioCadastrou(id_processo, id_usuario))
+            {
+                if (db.VerificaNacionalidade(id_processo) == 1)
+                {
+                    db.Aprovar(id_processo);
+                    var processo = pDB.GetProcesso(id_processo);
+                    Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
+                }
+                else
+                {
+                    db.EncaminhaControleRisco(id_processo);
+                    var processo = pDB.GetProcesso(id_processo);
+                    Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
+                }
+            }
         }
-        public bool EncaminhaCorrecao(int id)
+
+        public void AprovarControleRisco(decimal id_processo, decimal id_usuario)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.EncaminhaCorrecao(id);
+            if (VerificaSeUsuarioCadastrou(id_processo, id_usuario))
+            {
+                db.Aprovar(id_processo);
+                var processo = pDB.GetProcesso(id_processo);
+                Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
+            }
         }
-        public bool Aprovar(int id)
+
+        public void Reprovar(decimal id_processo, decimal id_usuario)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.Aprovar(id);
+            db.Reprovar(id_processo);
+            var processo = pDB.GetProcesso(id_processo);
+            Rastreabilidade(id_processo, id_usuario, processo.Id_Status);
         }
-        public bool Reprovar(int id)
+
+        public void Rastreabilidade(decimal id_processo, decimal id_usuario, decimal id_status)
         {
-            FluxoDAL dal = new FluxoDAL();
-            return dal.Reprovar(id);
+            db.Rastreabilidade(id_processo, id_usuario, id_status);
         }
-       
+
+        public bool VerificaSeUsuarioCadastrou(decimal id_processo, decimal id_usuario)
+        {
+            var result = db.VerificaSeUsuarioCadastrou(id_processo);
+            var status = result.Id_Status;
+            var usuario = result.Id_Usuario;
+            if (status == 4 && usuario != id_usuario)
+                return true;
+            else
+                return false;
+        }
     }
 }

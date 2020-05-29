@@ -48,7 +48,6 @@ namespace CadastroUsuarioMvc.Controllers
 
         public bool Autenticar(string login, string senha)
         {
-            UsuarioBL u = new UsuarioBL();
             LoginBL bl = new LoginBL();
             Usuario usuario = bl.Login(login, senha);
             if (usuario != null)

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CidadeBL.cs" />
     <Compile Include="FluxoBL.cs" />
+    <Compile Include="HistoricoBL.cs" />
     <Compile Include="LoginBL.cs" />
     <Compile Include="ProcessoBL.cs" />
     <Compile Include="UsuarioBL.cs" />

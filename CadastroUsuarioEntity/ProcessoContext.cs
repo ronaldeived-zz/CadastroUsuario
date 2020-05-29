@@ -1,9 +1,8 @@
 ﻿using CadastroUsuarioModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CadastroUsuarioEntity
 {
@@ -15,21 +14,26 @@ namespace CadastroUsuarioEntity
         {
             return db.Processo.Where(p => id_status.Contains(p.Id_Status)).ToList();
         }
-        public void CadastrarProcesso(Processo processo)
+        public decimal CadastrarProcesso(Processo processo)
         {
-            db.Processo.Add(processo);
+            var novo_processo = processo;
+            novo_processo.Id_Status = 4;
+            db.Processo.Add(novo_processo);
             db.SaveChanges();
+            var id_processo = novo_processo.Id_Processo;
+            return id_processo;
         }
         
-        public Processo GetProcesso(int id)
+        public Processo GetProcesso(decimal id)
         {
             return db.Processo.Find(id);
         }
 
-        //public bool PostEditar(Processo processo)
-        //{
-
-        //}
+        public void PostEditar(Processo processo)
+        {
+            db.Entry(processo).State = EntityState.Modified;
+            db.SaveChanges();
+        }
 
         public void Excluir(decimal id)
         {

@@ -10,44 +10,37 @@ namespace CadastroUsuarioMvc.Controllers
 {
     public class FluxoController : HomeController
     {
-        public ActionResult EncaminhaGerente(int id)
+        private FluxoBL bl = new FluxoBL();
+
+        public ActionResult EncaminhaGerente(decimal id)
         {
-            FluxoBL bl = new FluxoBL();
-            if (bl.EncaminhaGerente(id))
-                return RedirectToAction("Index", "Home");
-            else
-                return RedirectToAction("", "");
-        }
-        public ActionResult AprovarGerente(int id)
-        {
-            FluxoBL bl = new FluxoBL();
-            if (bl.VerificaNacionalidade(id) == 1)
-            {
-                bl.Aprovar(id);
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                bl.EncaminhaControleRisco(id);
-                return RedirectToAction("Index", "Home");
-            }
-        }
-        public ActionResult AprovarControleRisco(int id)
-        {
-            FluxoBL bl = new FluxoBL();
-            bl.Aprovar(id);
+            var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
+            bl.EncaminhaGerente(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
-        public ActionResult Reprovar(int id)
+        public ActionResult AprovarGerente(decimal id)
         {
-            FluxoBL bl = new FluxoBL();
-            bl.Reprovar(id);
+            var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
+            bl.AprovarGerente(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
-        public ActionResult Correcao(int id)
+
+        public ActionResult AprovarControleRisco(decimal id)
         {
-            FluxoBL bl = new FluxoBL();
-            bl.EncaminhaCorrecao(id);
+            var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
+            bl.AprovarControleRisco(id, id_usuario);
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Reprovar(decimal id)
+        {
+            var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
+            bl.Reprovar(id, id_usuario);
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Correcao(decimal id)
+        {
+            var id_usuario = Convert.ToDecimal(Session["ID_USUARIO"]);
+            bl.EncaminhaCorrecao(id, id_usuario);
             return RedirectToAction("Index", "Home");
         }
     }
